@@ -3,9 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-/*import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;*/
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -30,7 +27,6 @@ public class MainAcademyLoginTest {
         driver.quit();
     }
 
-
     @BeforeMethod
     public void beforeMethod() {
         driver.navigate().to(mainAcademyURL);
@@ -48,7 +44,6 @@ public class MainAcademyLoginTest {
         // login btn has changed to custom user pic
         // hover over userpic to see submenu
         WebElement userPictureElement = driver.findElement(By.className("userpicture"));
-        //hoverOverElement(driver, userPictureElement);
         userPictureElement.click();
 
         // click on userprofile
@@ -66,7 +61,6 @@ public class MainAcademyLoginTest {
         loginToPage();
 
         WebElement userPictureElement = driver.findElement(By.className("userpicture"));
-        //hoverOverElement(driver, userPictureElement);
         userPictureElement.click();
 
         WebElement userProfileBtn = driver.findElement(By.xpath("//*[contains(@class,'pull-right')]/li/a//*[contains(@class,'fa-user')]"));
@@ -78,12 +72,6 @@ public class MainAcademyLoginTest {
         WebElement courseMenuElement = driver.findElement(By.xpath("//a[@title='Automated testing']"));
         Assert.assertEquals(courseMenuElement.getText(),"Automated testing", "Automated testing course is not available" );
     }
-
-
-   /* private void hoverOverElement(WebDriver driver, WebElement element){
-        Actions builder = new Actions(driver);
-        builder.moveToElement(element).build().perform();
-    }*/
 
     private void loginToPage (){
         // go to the page and click on login Btn
