@@ -3,23 +3,17 @@ package com.yuliia.macademy.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class MyCoursesPage {
-    private WebDriver driver;
-
+public class MyCoursesPage extends Page{
     private final String automatedTestingElementXPATH = "//a[@title='Automated testing']";
 
     @FindBy(xpath = automatedTestingElementXPATH)
     private WebElement automatedTestingURL;
 
-    public MyCoursesPage (WebDriver driver)
-    {
-        this.driver = driver;
-        PageFactory.initElements(this.driver, this);
+    public MyCoursesPage (WebDriver driver) {
+        super(driver);
     }
     public WebElement getAutomatedCourses (){
         return automatedTestingURL;
     }
-
 }
