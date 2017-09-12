@@ -20,10 +20,19 @@ public class TestBase {
     protected String userPasswordInput = "Iuliia_Mysiuk06";
     protected String userProfileURL = "http://lms.mainacad.com/user/profile.php?id=3563";
 
+    protected MainPage mainPage;
+    protected LoginPage loginPage;
+    protected ProfilePage profilePage;
+    protected MyCoursesPage myCoursesPage;
+
     @BeforeSuite
     public void initDriver() {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        mainPage = new MainPage(driver);
+        loginPage = new LoginPage(driver);
+        profilePage = new ProfilePage(driver);
+        myCoursesPage = new MyCoursesPage(driver);
     }
 
     @AfterSuite

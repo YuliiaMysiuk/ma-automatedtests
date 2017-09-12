@@ -5,9 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MyCoursesPage extends Page{
-    private final String automatedTestingElementXPATH = "//a[@title='Automated testing']";
-
-    @FindBy(xpath = automatedTestingElementXPATH)
+    @FindBy(xpath = "//a[@title='Automated testing']")
     private WebElement automatedTestingURL;
 
     public MyCoursesPage (WebDriver driver) {

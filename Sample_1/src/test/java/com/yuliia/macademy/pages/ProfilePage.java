@@ -5,13 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class ProfilePage extends Page{
-    private final String userProfileNameXPATH = "//div[@class='userprofile']/h2";
-    private final String myCoursesURLXPATH = "//p[contains(@id, 'mycourses')]/a";
-
-    @FindBy(xpath = userProfileNameXPATH)
+    @FindBy(xpath = "//div[@class='userprofile']/h2")
     private WebElement actualUserName;
 
-    @FindBy(xpath = myCoursesURLXPATH)
+    @FindBy(xpath = "//p[contains(@id, 'mycourses')]/a")
     private WebElement myCoursesURL;
 
     public ProfilePage (WebDriver driver) {

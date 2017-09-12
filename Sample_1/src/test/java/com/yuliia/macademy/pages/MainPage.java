@@ -5,15 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends Page {
-    private final String userProfilePicXPATH = "//*[contains(@class,'pull-right')]/li/a//*[contains(@class,'fa-user')]";
-
     @FindBy (className = "loginurl")
     private WebElement loginURLBtnElement;
 
     @FindBy (className = "userpicture")
     private WebElement defaultUserPicture;
 
-    @FindBy (xpath = userProfilePicXPATH)
+    @FindBy (xpath = "//*[contains(@class,'pull-right')]/li/a//*[contains(@class,'fa-user')]")
     private WebElement userProfileBtn;
 
     public MainPage (WebDriver driver) {
